@@ -136,8 +136,8 @@ LOGIN_REDIRECT_URL = '/'
 LOGIN_URL = 'login'
 DEFAULT_AUTO_FIELD = 'django.db.models.BigAutoField'
 AUTHENTICATION_BACKENDS = ['users.backends.EmailBackend']
-RECAPTCHA_PUBLIC_KEY = "6Lc2ZsgmAAAAAGAWDjUjTWr2TZX4ip8KYMfxFQop"
-RECAPTCHA_PRIVATE_KEY = "6Lc2ZsgmAAAAAABLvgWzMCixVPdUbhrxS2eD3e0F"
+RECAPTCHA_PUBLIC_KEY = ""
+RECAPTCHA_PRIVATE_KEY = ""
 SILENCED_SYSTEM_CHECKS = ['captcha.recaptcha_test_key_error']
 
 
@@ -146,7 +146,7 @@ EMAIL_BACKEND = 'django.core.mail.backends.smtp.EmailBackend'
 EMAIL_HOST = 'smtp.gmail.com'
 EMAIL_FROM = str(os.getenv("ENV_EMAIL_FROM"))
 EMAIL_HOST_USER = "pioniir.com@@gmail.com"
-EMAIL_HOST_PASSWORD = "utbdfmugegswobxy"
+EMAIL_HOST_PASSWORD = ""
 EMAIL_PORT = 587
 EMAIL_USE_TLS = True
 PASSWORD_RESET_TIMEOUT = 14400
