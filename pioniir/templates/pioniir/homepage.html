@@ -1,0 +1,51 @@
+{% extends "pioniir/header.html" %}
+{% block content %}
+    <div class="starter-template">
+        <div class="starter-template">
+		<br>
+		<br>
+            <h1>A unique Community Management Tool designed for the Innovation Space. </h1>
+		<br>
+            <p class="lead">Our goal is to empower Business Incubators to take back control of their communities by providing enhanced organization and management tools – ultimately enabling them to better support startup founders like us in launching and growing fantastic ideas.</p>
+        </div>
+    
+        {% for object in heads %}
+            <div class="container col-xl-10 col-xxl-8 px-4 py-5">
+                <div class="row align-items-center g-lg-5 py-5">
+                  <div class="col-lg-7 text-center text-lg-start">
+                    <h2 class="text-end" >{{ object.title }}</h2>
+                    <p class="text-start text-wrap">{{ object.content | safe}} </p>
+                  </div>
+                  <div class="col-md-10 mx-auto col-lg-5">
+                    <img src="{{ object.image.url }}" class="img-thumbnail rounded float-end head-image aspect-ratio-box" alt="">
+                  </div>
+                </div>
+              </div>
+
+        {% endfor %}
+
+        {% if faqs is not None %}
+        <h2> FAQs </H2>
+          {% for object in faqs  %}
+
+          <div class="accordion" id="accordionFaq">
+            <div class="accordion-item">
+              <h2 class="accordion-header" id="heading{{object.id}}">
+                <button class="accordion-button" type="button" data-bs-toggle="collapse" data-bs-target="#collapse{{object.id}}" aria-expanded="true" aria-controls="collapse{{object.id}}">
+                  {{object.question}}
+                </button>
+              </h2>
+              <div id="collapse{{object.id}}" class="accordion-collapse collapse " aria-labelledby="heading{{object.id}}" data-bs-parent="#accordion">
+                <div class="accordion-body">
+                  {{object.answer | safe}}                  
+                </div>
+              </div>
+            </div>
+            
+          </div>
+          {% endfor %}
+
+      {% endif %}
+    </div>    
+{% endblock content %}
+
